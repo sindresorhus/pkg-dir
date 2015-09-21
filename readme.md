@@ -55,6 +55,7 @@ Directory to start from.
 ## Related
 
 - [pkg-dir-cli](https://github.com/sindresorhus/pkg-dir-cli) - CLI for this module
+- [pkg-up](https://github.com/sindresorhus/pkg-up) - Find the closest package.json file
 - [find-up](https://github.com/sindresorhus/find-up) - Find a file by walking up parent directories
 
 
