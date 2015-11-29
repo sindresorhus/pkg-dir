@@ -25,9 +25,9 @@ $ npm install --save pkg-dir
 
 ```js
 // example.js
-var pkgDir = require('pkg-dir');
+const pkgDir = require('pkg-dir');
 
-pkgDir(__dirname).then(function (rootPath) {
+pkgDir(__dirname).then(rootPath => {
 	console.log(rootPath);
 	//=> '/Users/sindresorhus/foo'
 });
@@ -38,7 +38,7 @@ pkgDir(__dirname).then(function (rootPath) {
 
 ### pkgDir([cwd])
 
-Returns a promise that resolves to the package root path or `null`.
+Returns a promise for the package root path or `null`.
 
 ### pkgDir.sync([cwd])
 

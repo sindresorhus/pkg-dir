@@ -50,5 +50,10 @@
   "devDependencies": {
     "ava": "*",
     "xo": "*"
+  },
+  "xo": {
+    "ignores": [
+      "test.js"
+    ]
   }
 }

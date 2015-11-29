@@ -1,16 +1,12 @@
-'use strict';
-var path = require('path');
-var test = require('ava');
-var fn = require('./');
+import path from 'path';
+import test from 'ava';
+import fn from './';
 
-test('async', function (t) {
-	return fn(path.join(__dirname, 'fixture')).then(function (fp) {
-		t.is(fp, __dirname);
-	});
+test('async', async t => {
+	t.is(await fn(path.join(__dirname, 'fixture')), __dirname);
 });
 
-test('sync', function (t) {
-	var fp = fn.sync(path.join(__dirname, 'fixture'));
-	t.is(fp, __dirname);
+test('sync', t => {
+	t.is(fn.sync(path.join(__dirname, 'fixture')), __dirname);
 	t.end();
 });
