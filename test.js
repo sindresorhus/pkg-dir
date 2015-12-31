@@ -8,5 +8,4 @@ test('async', async t => {
 
 test('sync', t => {
 	t.is(fn.sync(path.join(__dirname, 'fixture')), __dirname);
-	t.end();
 });
