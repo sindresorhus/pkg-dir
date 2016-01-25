@@ -1,7 +1,7 @@
 {
   "name": "pkg-dir",
   "version": "1.0.0",
-  "description": "Find the root directory of a npm package",
+  "description": "Find the root directory of an npm package",
   "license": "MIT",
   "repository": "sindresorhus/pkg-dir",
   "author": {

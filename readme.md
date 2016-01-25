@@ -1,6 +1,6 @@
 # pkg-dir [![Build Status](https://travis-ci.org/sindresorhus/pkg-dir.svg?branch=master)](https://travis-ci.org/sindresorhus/pkg-dir)
 
-> Find the root directory of a npm package
+> Find the root directory of an npm package
 
 
 ## Install
