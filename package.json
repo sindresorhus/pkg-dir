@@ -1,7 +1,7 @@
 {
   "name": "pkg-dir",
   "version": "1.0.0",
-  "description": "Find the root directory of an npm package",
+  "description": "Find the root directory of a Node.js project or npm package",
   "license": "MIT",
   "repository": "sindresorhus/pkg-dir",
   "author": {
@@ -10,7 +10,7 @@
     "url": "sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava"
@@ -33,7 +33,6 @@
     "file",
     "search",
     "match",
-    "package",
     "resolve",
     "parent",
     "parents",
@@ -45,7 +44,7 @@
     "path"
   ],
   "dependencies": {
-    "find-up": "^1.0.0"
+    "find-up": "^2.1.0"
   },
   "devDependencies": {
     "ava": "*",

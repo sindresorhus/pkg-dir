@@ -1,6 +1,6 @@
 # pkg-dir [![Build Status](https://travis-ci.org/sindresorhus/pkg-dir.svg?branch=master)](https://travis-ci.org/sindresorhus/pkg-dir)
 
-> Find the root directory of an npm package
+> Find the root directory of a Node.js project or npm package
 
 
 ## Install
@@ -27,8 +27,8 @@ $ npm install --save pkg-dir
 // example.js
 const pkgDir = require('pkg-dir');
 
-pkgDir(__dirname).then(rootPath => {
-	console.log(rootPath);
+pkgDir(__dirname).then(rootDir => {
+	console.log(rootDir);
 	//=> '/Users/sindresorhus/foo'
 });
 ```
@@ -38,15 +38,15 @@ pkgDir(__dirname).then(rootPath => {
 
 ### pkgDir([cwd])
 
-Returns a promise for the package root path or `null`.
+Returns a `Promise` for either the project root path or `null` if it couldn't be found.
 
 ### pkgDir.sync([cwd])
 
-Returns the package root path or `null`.
+Returns the project root path or `null`.
 
 #### cwd
 
-Type: `string`  
+Type: `string`<br>
 Default: `process.cwd()`
 
 Directory to start from.
@@ -61,4 +61,4 @@ Directory to start from.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
