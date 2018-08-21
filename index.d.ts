@@ -1,13 +1,15 @@
 /**
- * Returns a Promise for either the project root path or null if it couldn't be found.
+ * Creates a Promise for either the project root path or null if it couldn't be found.
+ * 
  * @param cwd Directory to start from. Default: process.cwd()
+ * @returns A Promise for either the project root path or null if it couldn't be found.
  */
-declare function pkgDir(cwd?: string): Promise<string | null>
+export default function pkgDir(cwd?: string): Promise<string | null>;
 
 /**
- * Returns the project root path or null if it couldn't be found.
+ * Gets the project root path or null if it couldn't be found.
+ * 
  * @param cwd Directory to start from. Default: process.cwd()
+ * @return The project root path or null if it couldn't be found.
  */
-export function sync(cwd?: string): string | null
-
-export default pkgDir
+export function sync(cwd?: string): string | null;
