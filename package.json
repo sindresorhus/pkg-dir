@@ -19,11 +19,6 @@
 		"index.js",
 		"index.d.ts"
 	],
-	"xo": {
-		"ignores": [
-			"index.d.ts"
-		]
-	},
 	"keywords": [
 		"package",
 		"json",
