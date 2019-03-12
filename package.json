@@ -1,6 +1,6 @@
 {
 	"name": "pkg-dir",
-	"version": "3.0.0",
+	"version": "4.0.0",
 	"description": "Find the root directory of a Node.js project or npm package",
 	"license": "MIT",
 	"repository": "sindresorhus/pkg-dir",
