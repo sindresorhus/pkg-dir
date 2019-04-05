@@ -44,7 +44,7 @@ Returns a `Promise` for either the project root path or `undefined` if it couldn
 
 ### pkgDir.sync([cwd])
 
-Returns the project root path or `undefined`.
+Returns the project root path or `undefined` if it couldn't be found.
 
 #### cwd
 
