@@ -8,6 +8,7 @@ const pkgDir = async cwd => {
 };
 
 module.exports = pkgDir;
+// TODO: Remove this for the next major release
 module.exports.default = pkgDir;
 
 module.exports.sync = cwd => {
