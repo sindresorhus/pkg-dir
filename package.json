@@ -45,10 +45,11 @@
 		"path"
 	],
 	"dependencies": {
-		"find-up": "^3.0.0"
+		"find-up": "^4.0.0"
 	},
 	"devDependencies": {
 		"ava": "^1.4.1",
+		"tempy": "^0.3.0",
 		"tsd": "^0.7.2",
 		"xo": "^0.24.0"
 	}
