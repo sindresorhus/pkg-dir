@@ -38,11 +38,11 @@ const pkgDir = require('pkg-dir');
 
 ## API
 
-### pkgDir([cwd])
+### pkgDir(cwd?)
 
 Returns a `Promise` for either the project root path or `undefined` if it couldn't be found.
 
-### pkgDir.sync([cwd])
+### pkgDir.sync(cwd?)
 
 Returns the project root path or `undefined` if it couldn't be found.
 
@@ -61,6 +61,14 @@ Directory to start from.
 - [find-up](https://github.com/sindresorhus/find-up) - Find a file by walking up parent directories
 
 
-## License
+---
 
-MIT © [Sindre Sorhus](https://sindresorhus.com)
+<div align="center">
+	<b>
+		<a href="https://tidelift.com/subscription/pkg/npm-pkg-dir?utm_source=npm-pkg-dir&utm_medium=referral&utm_campaign=readme">Get professional support for this package with a Tidelift subscription</a>
+	</b>
+	<br>
+	<sub>
+		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
+	</sub>
+</div>
