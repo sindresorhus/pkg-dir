@@ -1,8 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const test = require('ava');
-const tempy = require('tempy');
-const pkgDir = require('.');
+import fs from 'fs';
+import path from 'path';
+import test from 'ava';
+import tempy from 'tempy';
+import pkgDir from '.';
 
 // Create a disjoint directory, used for the not-found tests
 test.beforeEach(t => {
