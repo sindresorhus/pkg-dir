@@ -1,4 +1,4 @@
-# pkg-dir [![Build Status](https://travis-ci.com/sindresorhus/pkg-dir.svg?branch=master)](https://travis-ci.com/github/sindresorhus/pkg-dir)
+# pkg-dir
 
 > Find the root directory of a Node.js project or npm package
 
