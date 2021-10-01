@@ -1,15 +1,12 @@
-'use strict';
-const path = require('path');
-const findUp = require('find-up');
+import {dirname} from 'node:path';
+import {findUp, findUpSync} from 'find-up';
 
-const pkgDir = async cwd => {
+export async function pkgDir(cwd) {
 	const filePath = await findUp('package.json', {cwd});
-	return filePath && path.dirname(filePath);
-};
+	return filePath && dirname(filePath);
+}
 
-module.exports = pkgDir;
-
-module.exports.sync = cwd => {
-	const filePath = findUp.sync('package.json', {cwd});
-	return filePath && path.dirname(filePath);
-};
+export function pkgDirSync(cwd) {
+	const filePath = findUpSync('package.json', {cwd});
+	return filePath && dirname(filePath);
+}

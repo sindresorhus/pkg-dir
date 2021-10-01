@@ -1,41 +1,37 @@
-declare const pkgDir: {
-	/**
-	Synchronously find the root directory of a Node.js project or npm package.
+/**
+Find the root directory of a Node.js project or npm package.
 
-	@param cwd - Directory to start from. Default: `process.cwd()`.
-	@returns The project root path or `undefined` if it couldn't be found.
-	*/
-	sync: (cwd?: string) => string | undefined;
+@param cwd - Directory to start from. Default: `process.cwd()`.
+@returns The project root path or `undefined` if it couldn't be found.
 
-	/**
-	Find the root directory of a Node.js project or npm package.
+@example
+```
+// /
+// └── Users
+//     └── sindresorhus
+//         └── foo
+//             ├── package.json
+//             └── bar
+//                 ├── baz
+//                 └── example.js
 
-	@param cwd - Directory to start from. Default: `process.cwd()`.
-	@returns The project root path or `undefined` if it couldn't be found.
+// example.js
+import pkgDir = require('pkg-dir');
 
-	@example
-	```
-	// /
-	// └── Users
-	//     └── sindresorhus
-	//         └── foo
-	//             ├── package.json
-	//             └── bar
-	//                 ├── baz
-	//                 └── example.js
+(async () => {
+	const rootDir = await pkgDir(__dirname);
 
-	// example.js
-	import pkgDir = require('pkg-dir');
+	console.log(rootDir);
+	//=> '/Users/sindresorhus/foo'
+})();
+```
+*/
+export function pkgDir(cwd: any): Promise<string>;
 
-	(async () => {
-		const rootDir = await pkgDir(__dirname);
+/**
+Synchronously find the root directory of a Node.js project or npm package.
 
-		console.log(rootDir);
-		//=> '/Users/sindresorhus/foo'
-	})();
-	```
-	*/
-	(cwd?: string): Promise<string | undefined>;
-};
-
-export = pkgDir;
+@param cwd - Directory to start from. Default: `process.cwd()`.
+@returns The project root path or `undefined` if it couldn't be found.
+*/
+export function pkgDirSync(cwd: any): string;
