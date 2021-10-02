@@ -4,8 +4,8 @@
 
 ## Install
 
-```
-$ npm install pkg-dir
+```sh
+npm install pkg-dir
 ```
 
 ## Usage
@@ -23,32 +23,32 @@ $ npm install pkg-dir
 
 ```js
 // example.js
-import {pkgDir, pkgDirSync} from 'pkg-dir';
+import {packageDirectory} from 'pkg-dir';
 
-(async () => {
-	const rootDir = await pkgDir(__dirname);
-
-	console.log(rootDir);
-	//=> '/Users/sindresorhus/foo'
-})();
+console.log(await packageDirectory());
+//=> '/Users/sindresorhus/foo'
 ```
 
 ## API
 
-### pkgDir(cwd?)
+### packageDirectory(option?)
 
-Returns a `Promise` for either the project root path or `undefined` if it couldn't be found.
+Returns a `Promise` for either the project root path or `undefined` if it could not be found.
 
-### pkgDirSync(cwd?)
+### packageDirectorySync(options?)
 
-Returns the project root path or `undefined` if it couldn't be found.
+Returns the project root path or `undefined` if it could not be found.
 
-#### cwd
+#### options
+
+Type: `object`
+
+##### cwd
 
 Type: `string`\
 Default: `process.cwd()`
 
-Directory to start from.
+The directory to start searching from.
 
 ## Related
 

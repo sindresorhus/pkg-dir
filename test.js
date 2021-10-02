@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import test from 'ava';
 import tempy from 'tempy';
-import {pkgDir, pkgDirSync} from './index.js';
+import {packageDirectory, packageDirectorySync} from './index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -17,11 +17,11 @@ test.afterEach(t => {
 });
 
 test('async', async t => {
-	t.is(await pkgDir(path.join(__dirname, 'fixture')), __dirname);
-	t.is(await pkgDir(t.context.disjoint), undefined);
+	t.is(await packageDirectory({cwd: path.join(__dirname, 'fixture')}), __dirname);
+	t.is(await packageDirectory({cwd: t.context.disjoint}), undefined);
 });
 
 test('sync', t => {
-	t.is(pkgDirSync(path.join(__dirname, 'fixture')), __dirname);
-	t.is(pkgDirSync(t.context.disjoint), undefined);
+	t.is(packageDirectorySync({cwd: path.join(__dirname, 'fixture')}), __dirname);
+	t.is(packageDirectorySync({cwd: t.context.disjoint}), undefined);
 });

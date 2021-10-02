@@ -1,12 +1,12 @@
-import {dirname} from 'node:path';
+import path from 'node:path';
 import {findUp, findUpSync} from 'find-up';
 
-export async function pkgDir(cwd) {
+export async function packageDirectory({cwd}) {
 	const filePath = await findUp('package.json', {cwd});
-	return filePath && dirname(filePath);
+	return filePath && path.dirname(filePath);
 }
 
-export function pkgDirSync(cwd) {
+export function packageDirectorySync({cwd}) {
 	const filePath = findUpSync('package.json', {cwd});
-	return filePath && dirname(filePath);
+	return filePath && path.dirname(filePath);
 }

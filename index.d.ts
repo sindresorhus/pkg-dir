@@ -1,8 +1,16 @@
+export interface Options {
+	/**
+	The directory to start searching from.
+
+	@default process.cwd()
+	*/
+	readonly cwd?: string;
+}
+
 /**
 Find the root directory of a Node.js project or npm package.
 
-@param cwd - Directory to start from. Default: `process.cwd()`.
-@returns The project root path or `undefined` if it couldn't be found.
+@returns The project root path or `undefined` if it could not be found.
 
 @example
 ```
@@ -16,22 +24,35 @@ Find the root directory of a Node.js project or npm package.
 //                 └── example.js
 
 // example.js
-import pkgDir = require('pkg-dir');
+import {packageDirectory} from 'pkg-dir';
 
-(async () => {
-	const rootDir = await pkgDir(__dirname);
-
-	console.log(rootDir);
-	//=> '/Users/sindresorhus/foo'
-})();
+console.log(await packageDirectory());
+//=> '/Users/sindresorhus/foo'
 ```
 */
-export function pkgDir(cwd: any): Promise<string>;
+export function packageDirectory(options?: Options): Promise<string>;
 
 /**
 Synchronously find the root directory of a Node.js project or npm package.
 
-@param cwd - Directory to start from. Default: `process.cwd()`.
-@returns The project root path or `undefined` if it couldn't be found.
+@returns The project root path or `undefined` if it could not be found.
+
+@example
+```
+// /
+// └── Users
+//     └── sindresorhus
+//         └── foo
+//             ├── package.json
+//             └── bar
+//                 ├── baz
+//                 └── example.js
+
+// example.js
+import {packageDirectorySync} from 'pkg-dir';
+
+console.log(packageDirectorySync());
+//=> '/Users/sindresorhus/foo'
+```
 */
-export function pkgDirSync(cwd: any): string;
+export function packageDirectorySync(options?: Options): string;
