@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import pkgDir = require('.');
+import {pkgDir, pkgDirSync} from './index.js';
 
-expectType<Promise<string | undefined>>(pkgDir('/Users/project/pkg-dir'));
-expectType<string | undefined>(pkgDir.sync('/Users/project/pkg-dir'));
+expectType<Promise<string>>(pkgDir('/Users/project/pkg-dir'));
+expectType<string>(pkgDirSync('/Users/project/pkg-dir'));

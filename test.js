@@ -1,8 +1,11 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
 import test from 'ava';
 import tempy from 'tempy';
-import pkgDir from '.';
+import {pkgDir, pkgDirSync} from './index.js';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Create a disjoint directory, used for the not-found tests
 test.beforeEach(t => {
@@ -19,6 +22,6 @@ test('async', async t => {
 });
 
 test('sync', t => {
-	t.is(pkgDir.sync(path.join(__dirname, 'fixture')), __dirname);
-	t.is(pkgDir.sync(t.context.disjoint), undefined);
+	t.is(pkgDirSync(path.join(__dirname, 'fixture')), __dirname);
+	t.is(pkgDirSync(t.context.disjoint), undefined);
 });

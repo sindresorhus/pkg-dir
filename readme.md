@@ -23,7 +23,7 @@ $ npm install pkg-dir
 
 ```js
 // example.js
-const pkgDir = require('pkg-dir');
+import {pkgDir, pkgDirSync} from 'pkg-dir';
 
 (async () => {
 	const rootDir = await pkgDir(__dirname);
@@ -39,7 +39,7 @@ const pkgDir = require('pkg-dir');
 
 Returns a `Promise` for either the project root path or `undefined` if it couldn't be found.
 
-### pkgDir.sync(cwd?)
+### pkgDirSync(cwd?)
 
 Returns the project root path or `undefined` if it couldn't be found.
 
