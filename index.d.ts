@@ -30,7 +30,7 @@ console.log(await packageDirectory());
 //=> '/Users/sindresorhus/foo'
 ```
 */
-export function packageDirectory(options?: Options): Promise<string>;
+export function packageDirectory(options?: Options): Promise<string | undefined>;
 
 /**
 Synchronously find the root directory of a Node.js project or npm package.
@@ -55,4 +55,4 @@ console.log(packageDirectorySync());
 //=> '/Users/sindresorhus/foo'
 ```
 */
-export function packageDirectorySync(options?: Options): string;
+export function packageDirectorySync(options?: Options): string | undefined;
