@@ -2,14 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import test from 'ava';
-import tempy from 'tempy';
+import {temporaryDirectory} from 'tempy';
 import {packageDirectory, packageDirectorySync} from './index.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Create a disjoint directory, used for the not-found tests
 test.beforeEach(t => {
-	t.context.disjoint = tempy.directory();
+	t.context.disjoint = temporaryDirectory();
 });
 
 test.afterEach(t => {
