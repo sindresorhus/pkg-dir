@@ -1,11 +1,11 @@
-export interface Options {
+export type Options = {
 	/**
 	The directory to start searching from.
 
 	@default process.cwd()
 	*/
 	readonly cwd?: string;
-}
+};
 
 /**
 Find the root directory of a Node.js project or npm package.

@@ -1,5 +1,5 @@
 import path from 'node:path';
-import {findUp, findUpSync} from 'find-up';
+import {findUp, findUpSync} from 'find-up-simple';
 
 export async function packageDirectory({cwd} = {}) {
 	const filePath = await findUp('package.json', {cwd});
